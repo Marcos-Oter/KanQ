@@ -16,7 +16,7 @@
         <div class="row justify-content-center py-5">
             <div class="col-6 row justify-content-center h-50 p-5">
                 {% if update %}
-                <form class="w-75" method="post" action={% url "insert" %}>
+                <form class="w-75" method="post" action={% url "update" %}>
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="task" class="form-label">Actividad</label>
@@ -32,7 +32,7 @@
                     <button type="submit" class="btn btn-primary w-100">Modificar ✏</button>
                 </form>
                 {% else %}
-                <form class="w-75" method="post" action={% url "insert" %}>
+                <form class="w-75" method="post" action={% url "create" %}>
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="task" class="form-label">Actividad</label>
@@ -57,8 +57,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ data.task }}</h5>
                             <p class="card-text">{{ data.description }}</p>
-                            <a href="#" class="btn btn-primary">Modificar ✏</a>
-                            <a href="" class="btn btn-danger">Eliminar ❌</a>
+                            <a href={% url "update_form" data.id %} class="btn btn-primary">Modificar ✏</a>
+                            <a href={% url "delete" data.id %} class="btn btn-danger">Eliminar ❌</a>
                         </div>
                     </div>
                 </div>
