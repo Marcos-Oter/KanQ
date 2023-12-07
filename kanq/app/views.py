@@ -3,10 +3,17 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 #from django.template import loader
 from . models import task
+#from django.views.generic import TemplateView
 
 # Create your views here.
 
-def index(request):
+#class home(TemplateView):
+#    template_name="main-index.html"
+
+def index (request):
+    return render(request, "app/main-index.html")
+
+def crud(request):
     #template = loader.get_template("app/index.html")
     db_data = task.objects.all()
     context = {
@@ -29,10 +36,10 @@ def create(request):
         db_data.save()
         #print(request.POST["task"])
         #print(request.POST["description"])
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("crud"))
     except ValueError as err:
         print(err)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("crud"))
     
 def update(request):
     task_id = request.POST["id"]
@@ -42,7 +49,7 @@ def update(request):
     db_data.task = task_task
     db_data.description = task_description
     db_data.save()
-    return HttpResponseRedirect(reverse("index"))
+    return HttpResponseRedirect(reverse("crud"))
     
 def update_form(request, task_id):
     #template = loader.get_template("app/index.html")
@@ -62,4 +69,4 @@ def delete(request, task_id):
     db_data = task.objects.filter(id=task_id)
     db_data.delete()
 
-    return HttpResponseRedirect(reverse("index"))
+    return HttpResponseRedirect(reverse("crud"))
