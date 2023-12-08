@@ -6,13 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KanQ</title>
-    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="icon" href="{% static './media/icons/icon-logo-2.png' %}">
+    <link rel="stylesheet" href="{% static './css/indexStyle.css' %}">
+    <script src="https://kit.fontawesome.com/58353cef79.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <header>
 
     </header>
+
     <main>
         <section>
             <div class="paperOBJ">
@@ -21,20 +24,22 @@
                 <div class="xd3"></div>
             </div>
             <h1 class="KanQTittle">KanQ</h1>
-            <h2 class="KanQSubTittle">Crea, organiza y gestiona tus tareas fácilmente.</h2>
-            <a class="startButton" href={% url "crud" %}>Iniciar</a>
-
+            <h3 class="KanQSubTittle">Crea, organiza y gestiona tus tareas fácilmente.</h3>
+            <a class="startButton" href="{% url 'crud' %}">Iniciar</a>
         </section>
+
         <section class="adminSec">
             <p>¿Eres administrador?</p>
             <a href="#">Haz clic aquí</a>
         </section>
-    </main>
-    <footer>
 
+    </main>
+
+    <footer>
+        <p>Derechos Reservados @2023</p>
     </footer>
 
-    <script src="{% static './js/main.js' %}" type="module"></script>
+    <script src="{% static './js/index.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
