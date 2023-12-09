@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD2</title>
     <link rel="icon" href="{% static './media/icons/icon-logo-2.png' %}">
-    <link rel="stylesheet" href="{% static './css/crudStyle-2.css' %}">
+    <link rel="stylesheet" href="{% static './css/crudStyle-8.css' %}">
     <script src="https://kit.fontawesome.com/58353cef79.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -63,6 +63,11 @@
                                 <textarea type="text" name="description" class="form-control w-100 formDescription" 
                                 id="description" placeholder="Escribe con mas detalle tu tarea."></textarea>
                             </div>
+                            <select class="color-selector" name="color" id="color">
+                                <option value="light-red">Rojo</option>
+                                <option value="light-green">Verde</option>
+                                <option value="Blue">Azul</option>
+                            </select>
                             <button type="submit" title="Guardar" class="plusButton-1"><i class="fa-solid fa-plus"></i></button>
                         </form>
                     </div>
@@ -75,9 +80,9 @@
                 {% for data in db_data %}
                 <div class="cards-container-child">
                     <div class="card-own">
-                        <div class="card-body-own">
+                        <div class="card-body-own {{ data.color }}">
                             <div class="pin"><div class="pin-child"><div class="pin-child-2"></div></div></div>
-                            <div class="post-it-card-color-part"><h5 class="card-title">{{ data.task }}</h5></div>
+                            <div class="post-it-card-color-part {{ data.color }}"><h5 class="card-title">{{ data.1.task }}</h5></div>
                             <p class="card-text-own">{{ data.description }}</p>
                             <a href={% url "update_form" data.id %} class="btn btn-primary">Modificar <i class="fa-solid fa-pencil"></i></a>
                             <a href={% url "delete" data.id %} class="btn btn-danger">Eliminar <i class="fa-solid fa-circle-xmark"></i></a>

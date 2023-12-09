@@ -3,6 +3,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 #from django.template import loader
 from . models import task
+import random
+
+colors = [
+    'light-red',
+    'light-green',
+    'light-blue',
+]
 #from django.views.generic import TemplateView
 
 # Create your views here.
@@ -16,13 +23,21 @@ def index (request):
 def crud(request):
     #template = loader.get_template("app/index.html")
     db_data = task.objects.all()
+
+    '''random_colors = [random.choice(colors) for obt in range(0, len(db_data))]
+    cards_list = [[random_colors[index], task_obj] for index, task_obj in enumerate(db_data)]
+    print(cards_list)'''
+
     context = {
         "db_data": db_data[::-1],
         "update": None
     }
     print(db_data)
     #return HttpResponse(template.render(context, request))
+
+
     return render(request, "app/index.html", context)
+
 
 def create(request):
     try:

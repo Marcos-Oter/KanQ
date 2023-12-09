@@ -96,6 +96,7 @@ body::before
     width: 110px;
     filter: drop-shadow(1px 1px 3px black);
     transform: rotate(-15deg) translate(75px,50px);
+    user-select: none;
 }
 
 .paperOBJ
@@ -105,8 +106,13 @@ body::before
     height: 100px;
     position: absolute;
     transform: rotate(-20deg) translate(-50px,30px);
-
+    
     filter: drop-shadow(1px 1px 3px black);
+    /*filter: hue-rotate(0);*/
+    /*filter: hue-rotate(110deg);*/
+    /*filter: hue-rotate(220deg);*/
+    /*filter: hue-rotate(290deg);*/
+ 
 }
 
 .paperOBJ > .xd1
@@ -157,6 +163,7 @@ body::before
     padding: 5px;
     border-radius: 5px;
 }
+
 
 .formBody
 {
@@ -238,7 +245,6 @@ body::before
     color: white;
 }
 
-
 .plusButton > i
 {
     color: wheat;
@@ -282,6 +288,7 @@ body::before
     margin: auto;
     transform: translate(180px,-15px);
     filter: drop-shadow(2px 2px 2px rgb(88, 74, 8));
+    z-index: 555;
 }
 
 .pin-child
@@ -313,7 +320,7 @@ body::before
 {
     padding: 0;
     margin: 0;
-    background: rgb(253, 129, 129);
+    /*background: rgb(253, 129, 129);*/
     border-radius: 0;
     height: 100%;
     width: 100%;
@@ -342,12 +349,11 @@ body::before
     background: transparent;
     padding: 0;
     filter: drop-shadow(3px 3px 6px black);
- 
 }
 
 .post-it-card-color-part
 {
-    background: rgb(194, 89, 89);
+    /*background: rgb(194, 89, 89);*/
     width: 100%;
     height: 50px;
     padding: 5px;
@@ -355,6 +361,7 @@ body::before
     align-items: center;
     justify-content: left;
     overflow: hidden;
+    filter: contrast(2);
 }
 .post-it-card-color-part > h5
 {
@@ -429,4 +436,19 @@ footer
     bottom: 0;
 
     text-shadow: 2px 2px 6px black;
+}
+
+.light-red
+{
+    background: rgb(253, 129, 129);
+}
+ 
+.light-green
+{
+    background: rgb(129, 253, 135);
+}
+ 
+.light-blue
+{
+    background: rgb(129, 137, 253);
 }
