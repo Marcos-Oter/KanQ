@@ -9,7 +9,6 @@
 
 header
 {
-    background: rgba(111, 33, 255, 0.2);
     width: 100%;
     height: 35px;
     display: flex;
@@ -21,7 +20,7 @@ header
 header > a
 {
 
-    background: rgb(88, 114, 230);
+    background:white;
     padding: 5px 20px;
     margin: 2px 10px;
     border-radius: 50px;
@@ -29,7 +28,7 @@ header > a
     text-decoration: none;
     font-weight: bold;
 
-    color: aliceblue;
+    color: rgb(88, 114, 230);;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -45,18 +44,23 @@ body
     height: 100%;
     /*overflow: hidden;*/
     background: url(../media/images/KanQ1-Background.jpg);
-    background-size: cover;
-    object-fit: cover;
+    background-size:auto;
+    object-fit:cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
 }
 
 body::before
 {
     content: "";
-    width: 100%;
-    height: 100%;
-    content: "";
+    width: 100vw;
+    height: 150%;
     position: absolute;
-    background: linear-gradient(to bottom,rgba(0,0,0,0.45),rgba(111, 33, 255, 0.5));
+    overflow: hidden;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.65),rgba(111, 33, 255, 0.65));
     z-index: -50;  
 }
 
@@ -89,9 +93,9 @@ body::before
 .pencil-img
 {
     position: absolute;
-    width: 150px;
+    width: 110px;
     filter: drop-shadow(1px 1px 3px black);
-    transform: rotate(-15deg) translate(100px,-20px);
+    transform: rotate(-15deg) translate(75px,50px);
 }
 
 .paperOBJ
@@ -133,16 +137,13 @@ body::before
     z-index: 4;
 }
 
-footer
+.formDialog
 {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(111, 33, 255, 0.5);
-    padding: 25px;
-    color: white;
+    background: transparent;
+    width: 80%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
 }
 
 .formLabel
@@ -154,17 +155,42 @@ footer
     font-weight: bold;
     margin: 5px;
     padding: 5px;
+    border-radius: 5px;
 }
 
 .formBody
 {
-    background: rgba(45, 19, 92, 0.5);
+    background: rgb(58, 75, 153);
+    border: 3px solid white;
     padding: 25px;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 5px;
+}
+
+.formBody > h1
+{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+    background:rgb(88, 114, 230);
+    border-radius: 10px;
+    color: white;
+    text-shadow: 2px 2px 6px black;
+}
+
+.inputForm
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .inputClass
@@ -181,13 +207,32 @@ footer
     font-family: sans-serif;
 }
 
-.plusButton
+.formDialogChild
+{
+    transform: translateY(10px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plusButton-1
 {
     background:rgb(88, 114, 230);
     width: 50px;
     height: 50px;
     border: none;
     border-radius: 5px;
+    color: white;
+    text-shadow: 2px 2px 6px black;
+}
+
+.plusButton-1:hover
+{
+    transition: .15s;
+    background:rgb(116, 230, 88);
+    outline: 1px solid white;
 }
 
 .plusButton > i
@@ -212,4 +257,62 @@ footer
     background: blue;
     width: 100%;
     height: 50px;
+}
+
+.form::backdrop
+{
+    background: rgba(5,5,8,0.75);
+}
+i:hover
+{
+    cursor: pointer;
+}
+.closeButton
+{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 100px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: black;
+    border: none;
+    font-size: small;
+    border: 2px solid white;
+    font-weight: bolder;
+}
+.closeButton:hover
+{
+    transition: .15s;
+    background: rgb(255, 36, 72);
+    color: white;
+}
+
+footer
+{
+
+    width: 100%;
+    position:fixed;
+
+
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+    height: 45px;
+    padding: 20px;
+    text-align: center;
+
+    color: white;
+    bottom: 0;
+
+    text-shadow: 2px 2px 6px black;
 }
