@@ -90,6 +90,7 @@ main > section
 {
     cursor:pointer;
     opacity: .7;
+    transition: .15s;
 }
 
 .adminSec
@@ -111,12 +112,14 @@ main > section
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+    color: white;
 }
 
 .adminSec > a:hover
 {
     cursor:pointer;
     opacity: .7;
+    transition: .15s;
 }
 
 .adminSec > p

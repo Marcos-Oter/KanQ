@@ -71,14 +71,14 @@
                 </div>
             {% endif %}
             </div>
-            <div class="col-5 container justify-content-center">
+            <div class="cards-container">
                 {% for data in db_data %}
-                <div class="row post-it-card-1 scrollreveal2">
-                    <div class="card w-75 col post-it-card-2 ">
-                        <div class="card-body post-it-card-2">
-                            <div class="post-it-card-color-part"></div>
-                            <h5 class="card-title">{{ data.task }}</h5>
-                            <p class="card-text">{{ data.description }}</p>
+                <div class="cards-container-child">
+                    <div class="card-own">
+                        <div class="card-body-own">
+                            <div class="pin"><div class="pin-child"><div class="pin-child-2"></div></div></div>
+                            <div class="post-it-card-color-part"><h5 class="card-title">{{ data.task }}</h5></div>
+                            <p class="card-text-own">{{ data.description }}</p>
                             <a href={% url "update_form" data.id %} class="btn btn-primary">Modificar <i class="fa-solid fa-pencil"></i></a>
                             <a href={% url "delete" data.id %} class="btn btn-danger">Eliminar <i class="fa-solid fa-circle-xmark"></i></a>
                         </div>
@@ -90,7 +90,7 @@
 
     </main>
     <footer>
-        <p>Derechos Reservados @2023</p>
+        <p>KanQ - Derechos Reservados @2023</p>
     </footer>
 
     <!--SCROLL REVEAL-->
