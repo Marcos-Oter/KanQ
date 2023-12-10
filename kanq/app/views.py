@@ -1,12 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from . models import task
+from .models import task
 
+#REST API
+from rest_framework import viewsets
+from .serializer import taskSerializer
 
 # Create your views here.
 
-
+class taskViewSet(viewsets.ModelViewSet):
+    queryset=task.objects.all()
+    serializer_class = taskSerializer
 
 def index (request):
     return render(request, "app/main-index.html")
