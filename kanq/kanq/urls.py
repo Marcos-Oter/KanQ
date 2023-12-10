@@ -22,6 +22,6 @@ from . views import homeIndex
 urlpatterns = [
     #path("",homeIndex.as_view(), name="index"),
     path("", include("app.urls")),
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
 ]
 

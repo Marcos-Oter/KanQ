@@ -141,7 +141,7 @@ main > section
     filter: hue-rotate(0);
 }
 
-.paperOBJ > .xd1
+.paperOBJ > .paperOBJ_1
 {
     width: 115px;
     height: 115px;
@@ -150,7 +150,7 @@ main > section
     z-index: 3;
 }
 
-.paperOBJ > .xd2
+.paperOBJ > .paperOBJ_2
 {
     width: 115px;
     height: 115px;
@@ -160,7 +160,7 @@ main > section
     z-index: 2;
 }
 
-.paperOBJ > .xd3
+.paperOBJ > .paperOBJ_3
 {
     width: 115px;
     height: 25px;
