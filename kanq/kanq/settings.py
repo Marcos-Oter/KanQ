@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'app_store.cors.CorsMiddlewareMixin',
+    'kanq.cors.CorsMiddlewareMixin',
 ]
 
 ROOT_URLCONF = 'kanq.urls'
